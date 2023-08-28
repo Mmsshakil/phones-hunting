@@ -15,12 +15,15 @@ const displayPhones = phones => {
 
     // call the phoneContainer div from html
     const phoneContainer = document.getElementById('phone-container');
+    // clear the container before every search
+    phoneContainer.textContent = '';
 
     // here we get each phone's datas
     phones.forEach(phone => {
         // console.log(phone);
         // 1 create a div named phoneCard
         const phoneCard = document.createElement('div');
+
         // 2 set class of this div
         phoneCard.classList = `card p-5 bg-gray-100 shadow-xl my-4`;
         // 3 set innerhtml in this div
@@ -45,7 +48,7 @@ const displayPhones = phones => {
 
 // handle search button
 
-const handleSearch = () =>{
+const handleSearch = () => {
     // console.log('clicked');
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
