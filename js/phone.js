@@ -1,5 +1,5 @@
-const loadPhone = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const loadPhone = async (searchText) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
 
     const data = await res.json();
     const phones = data.data;
@@ -50,8 +50,11 @@ const handleSearch = () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     console.log(searchText);
+
+    // call the loadPhone function to show the phones for search
+    loadPhone(searchText);
 }
 
 
 
-loadPhone();
+// loadPhone();
