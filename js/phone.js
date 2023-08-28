@@ -18,7 +18,7 @@ const displayPhones = phones => {
 
     // here we get each phone's datas
     phones.forEach(phone => {
-        console.log(phone);
+        // console.log(phone);
         // 1 create a div named phoneCard
         const phoneCard = document.createElement('div');
         // 2 set class of this div
@@ -40,6 +40,16 @@ const displayPhones = phones => {
         phoneContainer.appendChild(phoneCard);
 
     });
+}
+
+
+// handle search button
+
+const handleSearch = () =>{
+    // console.log('clicked');
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    console.log(searchText);
 }
 
 
