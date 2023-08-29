@@ -18,6 +18,19 @@ const displayPhones = phones => {
     // clear the container before every search
     phoneContainer.textContent = '';
 
+    showAllContainer = document.getElementById('show-all-container');
+
+    if (phones.length > 12) {
+        showAllContainer.classList.remove("hidden");
+    }
+    else {
+        showAllContainer.classList.add("hidden");
+    }
+
+    // console.log(phones.length);
+
+    phones = phones.slice(0, 12);
+
     // here we get each phone's datas
     phones.forEach(phone => {
         // console.log(phone);
@@ -58,6 +71,14 @@ const handleSearch = () => {
     loadPhone(searchText);
 }
 
+const handleSearch2 = () => {
+    // console.log('2nd clicked');
+    const searchField2 = document.getElementById('search-filed2');
+    const searchText2 = searchField2.value;
+    // console.log(searchText2);
+
+    loadPhone(searchText2);
+}
 
 
 // loadPhone();
